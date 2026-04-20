@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betterways - Brochure Digitale 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+    :root {
+      --bw-green: #2E7D32;
+      --bw-green-light: #E8F5E9;
+      --bw-dark: #1A1C1E;
+      --bw-gray: #37474F;
+      --bw-accent: #1976D2; /* Bleu Digital */
+      --bw-orange: #F57C00; /* Orange Conseil */
+      --text-main: #2C3E50;
+      --bg-soft: #F9FBF9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background: #f0f2f0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 20px auto;
+      background: white;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    /* --- PAGE DE COUVERTURE --- */
+    .hero {
+      background: linear-gradient(rgba(26, 28, 30, 0.8), rgba(46, 125, 50, 0.8)), 
+                  url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo-box {
+      border: 2px solid white;
+      display: inline-block;
+      padding: 10px 25px;
+      margin-bottom: 40px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 1.5rem;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      line-height: 1.1;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+
+    .badge {
+      background: var(--bw-green);
+      color: white;
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* --- SECTION INTRODUCTION --- */
+    .section { padding: 60px 40px; }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .image-frame {
+      width: 100%;
+      height: 350px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--bw-dark);
+      margin-bottom: 20px;
+    }
+
+    /* --- POLES D'ACTIVITÉ --- */
+    .poles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .pole-card {
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--bw-green);
+      background: var(--bg-soft);
+      transition: all 0.3s ease;
+    }
+
+    .pole-card:hover { 
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transform: translateX(5px);
+    }
+    .pole-card.digital { border-color: var(--bw-accent); }
+    .pole-card.conseil { border-color: var(--bw-orange); }
+    .pole-card.coaching { border-color: var(--bw-gray); }
+
+    .pole-card h3 { font-size: 1rem; color: var(--bw-dark); }
+
+    /* --- DOMAINES --- */
+    .domaines-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .domaines-list {
+      list-style: none;
+    }
+
+    .domaine-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .domaine-item::before {
+      content: '→';
+      margin-right: 12px;
+      color: var(--bw-green);
+      font-weight: bold;
+    }
+
+    /* --- OFFRES / MODALITÉS --- */
+    .offres {
+      background: var(--bw-dark);
+      color: white;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .offres-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .offre-box {
+      background: rgba(255,255,255,0.05);
+      padding: 30px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.3s;
+    }
+
+    .offre-box:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .offre-box .icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .offre-box h4 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      background: white;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .contact-item { font-size: 0.9rem; color: var(--bw-gray); }
+    .contact-item b { 
+        color: var(--bw-dark); 
+        display: block; 
+        text-transform: uppercase; 
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .intro-grid, .poles-grid, .offres-grid, .domaines-container { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Couverture avec Image de Fond -->
+    <header class="hero">
+      <div class="logo-box">BETTERWAYS</div>
+      <p>Expertise · Innovation · Impact</p>
+      <h1>Catalogue de Formation</h1>
+      <div class="badge">Édition 2026</div>
+    </header>
+
+    <!-- Intro avec Image Latérale -->
+    <section class="section">
+      <div class="intro-grid">
+        <div>
+          <span style="color: var(--bw-green); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Notre Vision</span>
+          <h2 style="margin-top: 10px;">Accompagner votre Transformation</h2>
+          <p>Betterways s'appuie sur quatre leviers stratégiques pour propulser la performance de vos équipes au Maroc et en Afrique.</p>
+          <div class="poles-grid">
+            <div class="pole-card"><h3>Formation</h3></div>
+            <div class="pole-card digital"><h3>Digital</h3></div>
+            <div class="pole-card conseil"><h3>Conseil</h3></div>
+            <div class="pole-card coaching"><h3>Coaching</h3></div>
+          </div>
+        </div>
+        <div class="image-frame">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Réunion d'équipe Betterways">
+        </div>
+      </div>
+    </section>
+
+    <!-- Domaines avec Image -->
+    <section class="section" style="background: var(--bg-soft);">
+      <h2 style="text-align: center;">Domaines d'Expertise</h2>
+      <div class="domaines-container">
+        <div class="image-frame" style="height: 250px;">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" alt="Formation technologique">
+        </div>
+        <ul class="domaines-list">
+          <li class="domaine-item"><b>Management & RH</b></li>
+          <li class="domaine-item"><b>Leadership Manageriel</b></li>
+          <li class="domaine-item"><b>Soft Skills & Communication</b></li>
+          <li class="domaine-item"><b>Intelligence Artificielle & Digital</b></li>
+          <li class="domaine-item"><b>Efficacité Professionnelle</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Modalités -->
+    <section class="offres">
+      <span style="color: var(--bw-green-light); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Nos Formats</span>
+      <h2 style="color: white; margin-top: 10px;">Modalités d'Intervention</h2>
+      <div class="offres-grid">
+        <div class="offre-box">
+          <span class="icon">⚙️</span>
+          <h4>Ingénierie</h4>
+          Cadrage stratégique et évaluation de l'impact réel sur votre activité.
+        </div>
+        <div class="offre-box">
+          <span class="icon">👥</span>
+          <h4>Inter</h4>
+          Partage d'expériences entre pairs et sessions multi-entreprises.
+        </div>
+        <div class="offre-box">
+          <h4>Intra</h4>
+          <span class="icon">🏢</span>
+          Solutions sur-mesure déployées directement dans vos locaux.
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <footer class="footer">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Bureaux modernes" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 40px;">
+      <h2>Parlons de votre projet</h2>
+      <div class="contact-info">
+        <div class="contact-item"><b>Téléphone</b> +(212) 7 07 17 19 80</div>
+        <div class="contact-item"><b>Email</b> contact@betterways.ma</div>
+        <div class="contact-item"><b>Localisation</b> Casablanca, Maroc</div>
+      </div>
+      <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6; border-top: 1px solid #eee; pt-20">© 2026 Betterways Maroc. Tous droits réservés.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
